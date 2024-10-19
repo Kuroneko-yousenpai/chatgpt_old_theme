@@ -68,6 +68,11 @@
 		background-color: #212121;
 	}
 
+	.outline-none {
+		--main-surface-primary: #ffffff !important;
+		--main-surface-secondary: #ececec!important;
+	}
+
 
 	/*Coding blocks region*/
 
