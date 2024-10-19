@@ -1,0 +1,105 @@
+/* ==UserStyle==
+@name         ChatGPT old semi-dark theme
+@namespace    chatgpt.com
+@description  OpenAI ChatGPT old semi-dark theme now is back!
+@author       Kuroneko-yousenpai (https://github.com/Kuroneko-yousenpai/)
+@homepageURL  https://github.com/Kuroneko-yousenpai/chatgpt_old_theme/
+@supportURL   https://github.com/Kuroneko-yousenpai/chatgpt_old_theme/issues
+@updateURL    https://github.com/Kuroneko-yousenpai/chatgpt_old_theme/raw/main/openai_semidark.css
+@preprocessor stylus
+@version      1.5.2
+@license      MIT
+==/UserStyle== */
+
+@-moz-document domain("chatgpt.com") {
+    
+	/*Main region*/
+	
+	.prose :where(p):not(:where([class~=not-prose] *)), .text-orange-500 {
+		color: black;
+	}
+
+	.text-\[\#666\], .text-gizmo-gray-600 {
+	  color: initial;
+	}
+
+	.result-streaming > :not(ol):not(ul):not(pre):last-child::after, .result-streaming > pre:last-child code::after {
+	  content: "▋";
+	  margin-left: 0.25rem;
+	  vertical-align: baseline;
+	  animation: 1s steps(5, start) 0s infinite normal none running blink;
+	}
+
+
+	.text-\[\#666\], .text-gizmo-gray-600 {
+	  color: rgba(102,102,102,var(--tw-text-opacity));
+	}
+
+	.pt-3\.5 {
+	  background-color: #000;
+	}
+
+	.bg-token-sidebar-surface-primary {
+	  --sidebar-surface-secondary: var(--gray-850);
+	  --sidebar-surface-primary: var(--gray-950);
+	  --text-primary: var(--gray-50);
+	  --text-quaternary: var(--gray-700);
+	}
+
+	.bg-token-sidebar-surface-primary {
+	  color: #ffffff;
+	}
+
+	.bg-token-sidebar-surface-tertiary {
+	  --sidebar-surface-tertiary: var(--gray-700);
+	}
+
+	.outline-none {
+	  --main-surface-primary: var(--gray-700)!important;
+		--main-surface-secondary: var(--gray-600)!important;
+	  --border-light: hsla(0,0%,100%,.1);
+	}
+
+	.gizmo-shadow-stroke {
+		color: #000000 !important;
+	}
+
+
+	/*Coding blocks region*/
+
+	.light .hljs-doctag, .light .hljs-formula, .light .hljs-keyword {
+		color: #2e95d3;
+	}
+
+	.light .hljs-bullet, .light .hljs-link, .light .hljs-meta, .light .hljs-selector-id, .light .hljs-symbol, .light .hljs-title {
+
+		color: #f22c3d;
+
+	}
+
+	.light .hljs-comment, .light .hljs-quote {
+
+		color: #ffffff80;
+
+	}
+
+	.light code.hljs, .light code[class*=language-], .light pre[class*=language-] {
+		color: #fff;
+	}
+
+	.px-4.py-2 {
+		background-color: #161616;
+	}
+
+	.flex.items-center.rounded.bg-token-sidebar-surface-primary.px-2.font-sans.text-xs.text-token-text-secondary.dark\:bg-token-main-surface-secondary {
+		background-color: #252525;
+	}
+
+	.light .hljs-attr, .light .hljs-number, .light .hljs-selector-attr, .light .hljs-selector-class, .light .hljs-selector-pseudo, .light .hljs-template-variable, .light .hljs-type, .light .hljs-variable {
+	   color: #df3079; 
+	}
+
+	.light .hljs-addition, .light .hljs-attribute, .light .hljs-meta-string, .light .hljs-regexp, .light .hljs-string {
+		color: #00e5ac;
+	}
+}
