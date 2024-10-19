@@ -106,4 +106,8 @@
 	.light .hljs-addition, .light .hljs-attribute, .light .hljs-meta-string, .light .hljs-regexp, .light .hljs-string {
 		color: #00e5ac;
 	}
+	
+	.light .hljs-deletion, .light .hljs-name, .light .hljs-section, .light .hljs-selector-tag, .light .hljs-subst {
+		color: #ff2814;
+	}
 }
