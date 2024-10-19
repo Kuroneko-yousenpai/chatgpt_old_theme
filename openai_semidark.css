@@ -64,6 +64,10 @@
 		color: #000000 !important;
 	}
 
+	.bg-token-sidebar-surface-secondary {
+		background-color: #212121;
+	}
+
 
 	/*Coding blocks region*/
 
