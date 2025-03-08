@@ -36,13 +36,22 @@
         return template.content.firstChild;
     }
 
-    // This function searches for every conversation-turn element with the class "agent-turn"
-    // and, if its previous sibling is not the avatar element (identified by class "flex-shrink-0"),
-    // it creates and inserts the avatar element.
+    // This function inserts the avatar element before each agent-turn element,
+    // but skips if the parent article's data-testid indicates a conversation-turn number of 2 or lower.
     function insertAvatarIfMissing() {
         const agentElements = document.querySelectorAll('div.agent-turn');
         agentElements.forEach(agentEl => {
-            // If there’s no previous sibling or the previous element doesn’t have the unique class:
+            // Find the closest article element with a data-testid attribute starting with "conversation-turn-"
+            const articleEl = agentEl.closest('article[data-testid^="conversation-turn-"]');
+            if (articleEl) {
+                const testId = articleEl.getAttribute('data-testid');
+                const match = testId.match(/conversation-turn-(\d+)/);
+                if (match && Number(match[1]) <= 2) {
+                    // Skip this element because its conversation-turn number is 2 or lower.
+                    return;
+                }
+            }
+            // Insert avatar only if the previous sibling is not already the avatar.
             if (!agentEl.previousElementSibling ||
                 !agentEl.previousElementSibling.classList.contains('flex-shrink-0')) {
                 const avatarNode = htmlToNode(avatarHTML);
@@ -51,15 +60,14 @@
         });
     }
 
+    // Run on initial load.
     insertAvatarIfMissing();
 
-    // If new conversation elements are added dynamically,
-    // set up a MutationObserver to keep inserting the avatar when needed.
+    // If new conversation elements are added dynamically, observe and re-run.
     const observer = new MutationObserver(mutations => {
         mutations.forEach(mutation => {
             mutation.addedNodes.forEach(node => {
                 if (node.nodeType === Node.ELEMENT_NODE) {
-                    // Check if the added node or any of its descendants match our target
                     if (node.matches && node.matches('div.agent-turn')) {
                         insertAvatarIfMissing();
                     } else {
