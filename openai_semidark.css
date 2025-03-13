@@ -47,10 +47,11 @@
 	}
 
 	.result-streaming > :not(ol):not(ul):not(pre):last-child::after, .result-streaming > pre:last-child code::after {
-	  content: "▋";
-	  margin-left: 0.25rem;
-	  vertical-align: baseline;
-	  animation: 1s steps(5, start) 0s infinite normal none running blink;
+	  content: "▋" !important;
+	  font-family: Circle,system-ui,sans-serif !important;
+	  margin-left: 0.25rem !important;
+	  vertical-align: baseline !important;
+	  animation: 1s steps(5, start) 0s infinite normal none running blink !important;
 	}
 
 
@@ -95,7 +96,7 @@
 
 	.outline-none {
 		--main-surface-primary: #ffffff !important;
-		--main-surface-secondary: #ececec!important;
+		--main-surface-secondary: #ececec !important;
 	}
 
 
