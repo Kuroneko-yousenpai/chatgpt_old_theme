@@ -46,8 +46,8 @@
             if (articleEl) {
                 const testId = articleEl.getAttribute('data-testid');
                 const match = testId.match(/conversation-turn-(\d+)/);
-                if (match && Number(match[1]) <= 2) {
-                    // Skip this element because its conversation-turn number is 2 or lower.
+                if (match && Number(match[1]) <= 0) {
+                    // Skip this element because its conversation-turn number is 0 or lower.
                     return;
                 }
             }
