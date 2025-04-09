@@ -147,4 +147,18 @@
 		background-color: #f1f1f1;
 		border-radius: 0.5rem;
 	}
+	
+	/*Temporal fix "Skip to content" button*/
+	[dir=ltr] .left-1\/2 {
+		display: none;
+	}
+
+	/*Other fixes*/
+	.overflow-x-auto {
+		overflow-x: unset !important;
+	}
+
+	.flex.h-full.flex-col.overflow-y-auto.\[scrollbar-gutter\:stable\] {
+		overflow-x: hidden !important;
+	}
 }
