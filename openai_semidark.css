@@ -161,4 +161,10 @@
 	.flex.h-full.flex-col.overflow-y-auto.\[scrollbar-gutter\:stable\] {
 		overflow-x: hidden !important;
 	}
+	
+	/*New fixes*/
+
+	.bg-token-bg-elevated-secondary {
+		background-color: var(--gray-950);
+	}
 }
