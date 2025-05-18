@@ -167,4 +167,13 @@
 	.bg-token-bg-elevated-secondary {
 		background-color: var(--gray-950);
 	}
+	
+	.\@lg\/thread\:grow {
+		justify-content: center;
+	}
+
+	.\@lg\/thread\:mt-\[calc\(30dvh\+25px\)\] {
+		position: relative;
+		top: 335px;
+	}
 }
